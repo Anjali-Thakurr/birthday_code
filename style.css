@@ -354,9 +354,11 @@ nav {
     align-items: center;
     justify-content: center;
     box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.05);
+    transform: rotateY(-180deg); 
 }
 .card-message {
     text-align: center;
+
 }
 .card-message h3 {
     font-family: var(--font-subheading);
