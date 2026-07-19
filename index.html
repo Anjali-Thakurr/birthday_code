@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Celebrate Lasanu's Special Day - A premium interactive birthday tribute page filled with love, memories, and wishes.">
+    <title>Happy Birthday, Lasanu! | Celebration Page</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Separate Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating Background Particles / Confetti (CSS Animated) -->
+    <div class="particles-container">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+        <div class="particle p6"></div>
+        <div class="particle p7"></div>
+        <div class="particle p8"></div>
+        <div class="balloon b1">❤️</div>
+        <div class="balloon b2">🎂</div>
+        <div class="balloon b3">❤️</div>
+        <div class="balloon b4">🎂</div>
+    </div>
+    <!-- Navigation Header -->
+    <header class="glass-header">
+        <div class="logo">Lasanu's Day ✨</div>
+    </header>
+    <!-- Main Content Container -->
+    <main>
+        
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <p class="celebration-subtitle">Wishing you a day filled with smile and laughter!</p>
+                <h1 class="celebration-title">Happy Birthday<br><span class="highlight">Lasanu</span></h1>
+                
+                <!-- Countdown Widget -->
+                <div id="countdown" class="countdown-widget">
+                    <div class="countdown-item">
+                        <span class="number" id="days">00</span>
+                        <span class="label">Days</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="number" id="hours">00</span>
+                        <span class="label">Hours</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="number" id="minutes">00</span>
+                        <span class="label">Min</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="number" id="seconds">00</span>
+                        <span class="label">Sec</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Interactive Floating Card Container -->
+            <div class="card-outer-container">
+                <div class="birthday-card">
+                    <div class="card-cover">
+                        <div class="cover-design">
+                            <span class="sparkle">✨</span>
+                            <div class="cover-title">For You</div>
+                            <p class="click-prompt">Hover to unfold</p>
+                        </div>
+                    </div>
+                    <div class="card-inside">
+                        <div class="card-message">
+                            <h3>Dearest Lasanu,</h3>
+                            <p>May your year ahead be filled with laughter, endless joy, beautiful surprises, and the warmth of those who cherish you most.</p>
+                            <p>You light up every room you enter, and today the universe sparkles just for you.</p>
+                            <div class="card-signature">With Love, Always ♥</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Memory Lane / Polaroid Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="section-header">
+                <h2>Memory Lane</h2>
+                <p class="section-desc">Capturing standard frames of laughter, journeys, and beautiful milestones.</p>
+            </div>
+            
+            <div class="polaroid-grid">
+                <!-- Polaroid Card 1 -->
+                <div class="polaroid" style="--rotation: -2deg;">
+                    <div class="polaroid-img-wrapper">
+                        <img src="birthday_cake.jpg" alt="Lasanu's Birthday Cake" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="polaroid-caption">Where it all started ✨</div>
+                </div>
+                <!-- Polaroid Card 2 -->
+                <div class="polaroid" style="--rotation: 3deg;">
+                    <div class="polaroid-img-wrapper">
+                        <div class="polaroid-fallback fall-2"><i class="fa-solid fa-plane-departure"></i></div>
+                    </div>
+                    <div class="polaroid-caption">Chasing sunnier days 🏖️</div>
+                </div>
+                <!-- Polaroid Card 3 -->
+                <div class="polaroid" style="--rotation: -1deg;">
+                    <div class="polaroid-img-wrapper">
+                        <img src="champagne_toast.jpg" alt="Champagne Toast" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="polaroid-caption">Laughter at midnight 🥂</div>
+                </div>
+                <!-- Polaroid Card 4 -->
+                <div class="polaroid" style="--rotation: 4deg;">
+                    <div class="polaroid-img-wrapper">
+                        <div class="polaroid-fallback fall-4"><i class="fa-solid fa-star"></i></div>
+                    </div>
+                    <div class="polaroid-caption">Dreaming big in the city 🌌</div>
+                </div>
+            </div>
+        </section>
+            <!-- Grid of Sticky Wishes -->
+            <div id="wishesGrid" class="wishes-grid">
+                <!-- Dynamic wishes will be appended here. Seed wishes for presentation: -->
+                <div class="wish-card note-gold">
+                    <p class="wish-text">"To the most incredible soul, wishing you the happiest birthday! May all your biggest dreams take flight this year."</p>
+                    <div class="wish-footer">                        <span class="wish-pin">🥳</span>
+                    </div>
+                </div>
+                <div class="wish-card note-rose">
+                    <p class="wish-text">"Cheers to another year of gorgeous moments, lovely memories, and absolute happiness. You deserve the world, Lasanu!"</p>
+                    <div class="wish-footer">
+                        <span class="wish-pin">🎀</span>
+                    </div>
+                </div>
+                <div class="wish-card note-violet">
+                    <p class="wish-text">"Happy birthday ! Keep shining bright, keeping lighting up lives. So grateful to walk through life with you."</p>
+                    <div class="wish-footer">
+                        <span class="wish-pin">🎉</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>Made with 💖 for Lasanu's Birthday</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                <a href="#"><i class="fa-brands fa-spotify"></i></a>
+            </div>
+            <p class="copyright">&copy; 2026 Celebration. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- Interactive Logic (Countdown & Wish Wall Persistence) -->
+    <script>
+        // Set dynamic birthday target date - July 10 of current/next year
+        const now = new Date();
+        let targetYear = now.getFullYear();
+        let targetDate = new Date(`August 17, 2026 00:00:00`).getTime();
+        
+        // If birthday has passed this year, set target to next year
+        if (now.getTime() > targetDate) {
+            targetDate = new Date(`August 17, 2027 00:00:00`).getTime();
+        }
+        // Update Countdown
+        function updateCountdown() {
+            const current = new Date().getTime();
+            const difference = targetDate - current;
+            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((difference % (1000 * 60)) / 1000);
+            document.getElementById('days').innerText = String(d).padStart(2, '0');
+            document.getElementById('hours').innerText = String(h).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(m).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(s).padStart(2, '0');
+        }
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        // Wish Wall Interactive Logic
+        const wishForm = document.getElementById('wishForm');
+        const wishesGrid = document.getElementById('wishesGrid');
+        // Load wishes from LocalStorage on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedWishes = JSON.parse(localStorage.getItem('birthday_wishes') || '[]');
+            savedWishes.forEach(wish => appendWishCard(wish.name, wish.message, wish.color));
+        });
+        wishForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('senderName').value.trim();
+            const message = document.getElementById('wishMessage').value.trim();
+            const color = document.getElementById('wishColor').value;
+            if (name && message) {
+                appendWishCard(name, message, color);
+                
+                // Save to LocalStorage
+                const savedWishes = JSON.parse(localStorage.getItem('birthday_wishes') || '[]');
+                savedWishes.push({ name, message, color });
+                localStorage.setItem('birthday_wishes', JSON.stringify(savedWishes));
+                // Clear input form
+                wishForm.reset();
+                // Sparkle animation / alert
+                triggerMiniConfetti();
+            }
+        });
+        function appendWishCard(name, message, color) {
+            const card = document.createElement('div');
+            card.className = `wish-card note-${color} animate-pop`;
+            card.innerHTML = `
+                <p class="wish-text">"${escapeHtml(message)}"</p>
+                <div class="wish-footer">
+                    <span class="wish-author">— ${escapeHtml(name)}</span>
+                    <span class="wish-pin">📌</span>
+                </div>
+            `;
+            // Insert at the top of the wall
+            wishesGrid.insertBefore(card, wishesGrid.firstChild);
+        }
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+        // Optional sparkle / alert confetti response
+        function triggerMiniConfetti() {
+            // Temporary overlay for celebratory spark
+            const activeHeader = document.querySelector('.logo');
+            activeHeader.innerText = 'Added! 🎉✨';
+            setTimeout(() => {
+                activeHeader.innerText = "Lasanu's Day ✨";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
