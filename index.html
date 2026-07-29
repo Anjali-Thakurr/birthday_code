@@ -115,89 +115,43 @@
             <p class="copyright">&copy; 2026 Celebration.</p>
         </div>
     </footer>
-    <!-- Interactive Logic (Countdown & Wish Wall Persistence) -->
+    <!-- Interactive Logic (Countdown) -->
     <script>
-        // Set dynamic birthday target date - July 10 of current/next year
-        const now = new Date();
-        let targetYear = now.getFullYear();
-        let targetDate = new Date(`August 17, 2026 00:00:00`).getTime();
-        
-        // If birthday has passed this year, set target to next year
-        if (now.getTime() > targetDate) {
-            targetDate = new Date(`August 17, 2027 00:00:00`).getTime();
-        }
-        // Update Countdown
-        function updateCountdown() {
-            const current = new Date().getTime();
-            const difference = targetDate - current;
-            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((difference % (1000 * 60)) / 1000);
-            document.getElementById('days').innerText = String(d).padStart(2, '0');
-            document.getElementById('hours').innerText = String(h).padStart(2, '0');
-            document.getElementById('minutes').innerText = String(m).padStart(2, '0');
-            document.getElementById('seconds').innerText = String(s).padStart(2, '0');
-        }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-        // Wish Wall Interactive Logic
-        const wishForm = document.getElementById('wishForm');
-        const wishesGrid = document.getElementById('wishesGrid');
-        // Load wishes from LocalStorage on load
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedWishes = JSON.parse(localStorage.getItem('birthday_wishes') || '[]');
-            savedWishes.forEach(wish => appendWishCard(wish.name, wish.message, wish.color));
-        });
-        wishForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = document.getElementById('senderName').value.trim();
-            const message = document.getElementById('wishMessage').value.trim();
-            const color = document.getElementById('wishColor').value;
-            if (name && message) {
-                appendWishCard(name, message, color);
-                
-                // Save to LocalStorage
-                const savedWishes = JSON.parse(localStorage.getItem('birthday_wishes') || '[]');
-                savedWishes.push({ name, message, color });
-                localStorage.setItem('birthday_wishes', JSON.stringify(savedWishes));
-                // Clear input form
-                wishForm.reset();
-                // Sparkle animation / alert
-                triggerMiniConfetti();
-            }
-        });
-        function appendWishCard(name, message, color) {
-            const card = document.createElement('div');
-            card.className = `wish-card note-${color} animate-pop`;
-            card.innerHTML = `
-                <p class="wish-text">"${escapeHtml(message)}"</p>
-                <div class="wish-footer">
-                    <span class="wish-author">— ${escapeHtml(name)}</span>
-                    <span class="wish-pin">📌</span>
-                </div>
-            `;
-            // Insert at the top of the wall
-            wishesGrid.insertBefore(card, wishesGrid.firstChild);
-        }
-        function escapeHtml(text) {
-            return text
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
-        }
-        // Optional sparkle / alert confetti response
-        function triggerMiniConfetti() {
-            // Temporary overlay for celebratory spark
-            const activeHeader = document.querySelector('.logo');
-            activeHeader.innerText = 'Added! 🎉✨';
-            setTimeout(() => {
-                activeHeader.innerText = "Lasanu's Day ✨";
-            }, 3000);
-        }
+        // 1. Set your rigid target date
+const targetDate = new Date(`July 29, 2026 17:55:00`).getTime();
+
+// 2. Assign the interval to a variable so we can stop it later
+const countdownTimer = setInterval(updateCountdown, 1000);
+
+// Update Countdown
+function updateCountdown() {
+    const current = new Date().getTime();
+    const difference = targetDate - current;
+        // 3. CRITICAL CHECK: If the countdown finishes, freeze it at 00
+    if (difference <= 0) {
+        clearInterval(countdownTimer); // Stops the loop from running
+        document.getElementById('days').innerText = "🎶";
+        document.getElementById('hours').innerText = "🥂";
+        document.getElementById('minutes').innerText = "🎉";
+        document.getElementById('seconds').innerText = "🎂";
+        return; // Exits the function early so math doesn't run on negative numbers
+    }
+
+    // 4. Standard countdown math
+    const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+    // 5. DOM Display updates
+    document.getElementById('days').innerText = String(d).padStart(2, '0');
+    document.getElementById('hours').innerText = String(h).padStart(2, '0');
+    document.getElementById('minutes').innerText = String(m).padStart(2, '0');
+    document.getElementById('seconds').innerText = String(s).padStart(2, '0');
+}
+
+// Run immediately on page load so user doesn't see a 1-second blank delay
+updateCountdown(); 
     </script>
 </body>
 </html>
